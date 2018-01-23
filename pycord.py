@@ -12,7 +12,10 @@ prefix = commands.Bot(command_prefix="!")
 
 @client.event
 async def on_ready():
-    print("Bot ready...")
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('Hello smyhk, how may I serve you?')
 
 
 @client.event
