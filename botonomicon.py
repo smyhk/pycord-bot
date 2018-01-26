@@ -1,11 +1,19 @@
 # pycord.py bot rewrite
 
 import os
+import logging
 import discord
 from discord.ext import commands
 # from discord.ext.commands import Bot
 # import asyncio
 
+
+# Creates a logfile to store debugging info
+logger = logging.getLogger("discord")
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="W")
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
 
 bot = commands.Bot(command_prefix="!")
 
