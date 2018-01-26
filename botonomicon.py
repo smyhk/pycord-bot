@@ -3,8 +3,8 @@
 import os
 import discord
 from discord.ext import commands
-from discord.ext.commands import Bot
-import asyncio
+# from discord.ext.commands import Bot
+# import asyncio
 
 
 bot = commands.Bot(command_prefix="!")
@@ -39,6 +39,24 @@ async def info(ctx, user: discord.Member):
 
 
 @bot.command(pass_context=True)
+async def serverinfo(ctx):
+    mbed = discord.Embed(title="{}'s info".format(ctx.message.server.name),
+                         description="Here there be dragons.",
+                         color=0x00ff00)
+    mbed.add_field(name="Guild Name",
+                   value=ctx.message.server.name, inline=True)
+    mbed.add_field(name="Guild ID",
+                   value=ctx.message.server.id, inline=True)
+    mbed.add_field(name="Roles",
+                   value=str(len(ctx.message.server.roles)), inline=True)
+    mbed.add_field(name="Members",
+                   value=ctx.message.server.member_count, inline=True)
+    mbed.set_thumbnail(url=ctx.message.server.icon_url)
+    await bot.say(embed=mbed)
+
+
+@bot.command(pass_context=True)
+@commands.has_role("dumbass")
 async def kick(ctx, user: discord.Member):
     await bot.say(":boot: Cya, {}. Ya Motherfucker!".format(user.name))
     await bot.kick(user)
