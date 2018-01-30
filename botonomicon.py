@@ -22,7 +22,7 @@ async def on_ready():
     print('Username: ' + bot.user.name)
     print('ID: ' + bot.user.id)
     print('Hello smyhk. How about a nice game of chess?')
-    await bot.change_presence(game=discord.Game(name="Big Dicks and Airplanes"))
+    await bot.change_presence(game=discord.Game(name="with his robot balls"))
 
 
 @bot.command(pass_context=True)
