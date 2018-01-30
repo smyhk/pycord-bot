@@ -4,8 +4,6 @@ import os
 import logging
 import discord
 from discord.ext import commands
-# from discord.ext.commands import Bot
-# import asyncio
 
 
 # Creates a logfile to store debugging info
