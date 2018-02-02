@@ -29,7 +29,7 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     # msg = "" + str(member.mention) + " joined at: " + str(member.joined_at)
-    msg = "Welcome to the server " + str(member.mention) + " type '!help' for more information."
+    msg = "Welcome to the server " + str(member.mention) + "! Type !help for more information."
     await bot.send_message(bot.get_channel("373673083854389249"), msg)
 
 
