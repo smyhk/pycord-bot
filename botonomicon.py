@@ -2,6 +2,7 @@
 
 import os
 import logging
+import datetime
 import discord
 from discord.ext import commands
 
@@ -23,6 +24,12 @@ async def on_ready():
     print('ID: ' + bot.user.id)
     print('Hello smyhk. How about a nice game of chess?')
     await bot.change_presence(game=discord.Game(name="with his robot balls"))
+
+
+@bot.event
+async def on_member_join(member):
+    msg = "" + str(member.mention) + " joined at: " + str(member.joined_at)
+    await bot.send_message(bot.get_channel("373673083854389249"), msg)
 
 
 @bot.command(pass_context=True)
