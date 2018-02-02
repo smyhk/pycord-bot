@@ -1,4 +1,5 @@
 # pycord.py bot rewrite
+# TODO: refactor into classes
 
 import os
 import logging
