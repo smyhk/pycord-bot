@@ -32,6 +32,12 @@ async def on_member_join(member):
     await bot.send_message(bot.get_channel("373673083854389249"), msg)
 
 
+@bot.event
+async def on_member_remove(member):
+    msg = "" + str(member.mention) + " left at: " + str(datetime.datetime.now())
+    await bot.send_message(bot.get_channel("373673083854389249"), msg)
+
+
 @bot.command(pass_context=True)
 async def ping(ctx):
     await bot.say(":ping_pong: pong!! xSSS")
