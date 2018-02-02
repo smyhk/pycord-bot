@@ -9,7 +9,7 @@ from discord.ext import commands
 
 # Creates a logfile to store debugging info
 logger = logging.getLogger("discord")
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="w")
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
@@ -23,12 +23,13 @@ async def on_ready():
     print('Username: ' + bot.user.name)
     print('ID: ' + bot.user.id)
     print('Hello smyhk. How about a nice game of chess?')
-    await bot.change_presence(game=discord.Game(name="with his robot balls"))
+    await bot.change_presence(game=discord.Game(name="Ass Blasters 7", type=3))
 
 
 @bot.event
 async def on_member_join(member):
-    msg = "" + str(member.mention) + " joined at: " + str(member.joined_at)
+    # msg = "" + str(member.mention) + " joined at: " + str(member.joined_at)
+    msg = "Welcome to the server " + str(member.mention) + " type '!help' for more information."
     await bot.send_message(bot.get_channel("373673083854389249"), msg)
 
 
