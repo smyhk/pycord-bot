@@ -89,7 +89,7 @@ def index():
     # Load the bot token from an environment variable
     bot.run(os.environ.get('BOT_TOKEN'))
 
-    Timer(29.0, requests.get("https://pycordbottest.herokuapp.com"))
+    Timer(1740.0, requests.get("https://pycordbottest.herokuapp.com"))
 
 
 app.run(port=port, host="0.0.0.0")
