@@ -1,1 +1,1 @@
-web: gunicorn botonomicon:app --prel;oad
+web: python botonomicon.py
