@@ -14,7 +14,7 @@ app = Flask(__name__)
 port = int(os.environ.get("PORT"))
 
 
-@app.route("/")
+@app.route("/", methods=['POST'])
 def index():
     bot = commands.Bot(command_prefix="!")
 
