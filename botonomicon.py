@@ -29,18 +29,18 @@ async def on_ready():
 
 @bot.event
 async def on_member_join(member):
-    # msg = "" + str(member.mention) + " joined at: " + str(member.joined_at)
+    print(str(member.mention) + " joined at: " + str(member.joined_at))
     msg = "Welcome to the server " + str(member.mention) + "! Type !help for more information."
     await bot.send_message(bot.get_channel("373673083854389249"), msg)
 
 
 @bot.event
 async def on_member_remove(member):
-    msg = "" + str(member.mention) + " left at: " + str(datetime.datetime.now())
-    await bot.send_message(bot.get_channel("373673083854389249"), msg)
+    print(str(member.mention) + " left at: " + str(datetime.datetime.now()))
+    # await bot.send_message(bot.get_channel("373673083854389249"), msg)
 
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, description='Is bot listening?')
 async def ping(ctx):
     await bot.say(":ping_pong: pong!! xSSS")
     print("user pinged the bot")
