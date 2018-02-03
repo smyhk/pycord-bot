@@ -2,10 +2,11 @@
 # TODO: refactor into classes
 
 import os
+from threading import Timer
 # import logging
 import datetime
-from flask import Flask, request
-# import requests
+from flask import Flask
+import requests
 import discord
 from discord.ext import commands
 
@@ -87,6 +88,8 @@ def index():
 
     # Load the bot token from an environment variable
     bot.run(os.environ.get('BOT_TOKEN'))
+
+    Timer(29.0, requests.get("https://pycordbottest.herokuapp.com"))
 
 
 app.run(port=port, host="0.0.0.0")
