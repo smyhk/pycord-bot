@@ -26,8 +26,11 @@ event = threading.Event()
 
 
 def foo():
+    print("in foo")
+
     def pinger():
         requests.get("https://pycordbottest.herokuapp.com")
+        print("i pinged")
 
     k = ThreadJob(pinger, event, 1740)
     k.start()

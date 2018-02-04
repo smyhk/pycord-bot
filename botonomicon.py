@@ -85,10 +85,10 @@ def index():
         mbed.add_field(name="this is a field", value="a field value", inline=True)
         await bot.say(embed=mbed)
 
+    foo()
+
     # Load the bot token from an environment variable
     bot.run(os.environ.get('BOT_TOKEN'))
-
-    foo()
 
 
 app.run(port=port, host="0.0.0.0")
