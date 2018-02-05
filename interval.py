@@ -32,5 +32,5 @@ def foo():
         r = requests.get("https://pycordbottest.herokuapp.com")
         print("i pinged")
 
-    k = ThreadJob(pinger, event, 30)
+    k = ThreadJob(pinger, event, 1740)
     k.start()
