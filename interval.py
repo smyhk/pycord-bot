@@ -29,8 +29,8 @@ def foo():
     print("in foo")
 
     def pinger():
-        r = requests.get("https://pycordbottest.herokuapp.com")
-        print("i pinged")
+        r = requests.get("http://pycordbottest.herokuapp.com")
+        print("i pinged. The values of r is: " + str(r))
 
     k = ThreadJob(pinger, event, 1740)
     k.start()
