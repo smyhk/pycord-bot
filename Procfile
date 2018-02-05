@@ -1,1 +1,1 @@
-web: python botonomicon.py
+worker: python botonomicon.py
