@@ -7,8 +7,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print('Connected to endpoint')
-    print('Username: ' + client.user.name)
-    print('ID: ' + client.user.id)
+    print('Logged in as {0.user}'.format(client))
     print('Hello smyhk. How about a nice game of chess?')
 
 
@@ -19,24 +18,24 @@ async def on_message(message):
     if message.author == client.user:
         return
     elif message.content == "cookie":
-        await client.send_message(message.channel, ":cookie:")
+        await message.channel.send(":cookie:")
     elif message.content.upper().startswith("!PING"):
         msg = "{0.author.mention} Pong!".format(message)
-        await client.send_message(message.channel, msg)
+        await message.channel.send(msg)
     elif message.content.upper().startswith("!SAY"):
         # only user with this id can execute the command
-        if message.author.id == "351094569309306891":
+        if message.author.id == 351094569309306891:
             args = message.content.split(" ")
             msg = " ".join(args[1:]).format(message)
-            await client.send_message(message.channel, msg)
+            await message.channel.send(msg)
         else:
-            await client.send_message(message.channel, "Ah ah ah, you didn't say the magic word!")
+            await message.channel.send("Ah ah ah, you didn't say the magic word!")
     elif message.content.upper().startswith("!AMIADMIN"):
         # user users with this role id can execute the command
-        if "405241489292263424" in [role.id for role in message.author.roles]:
-            await client.send_message(message.channel, "You are an admin")
+        if 405241489292263424 in [role.id for role in message.author.roles]:
+            await message.channel.send("You are an admin")
         else:
-            await client.send_message(message.channel, "You are not an admin")
+            await message.channel.send("You are not an admin")
 
 
 # Load the bot token from an environment variable

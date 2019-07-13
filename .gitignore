@@ -100,8 +100,8 @@ ENV/
 # mypy
 .mypy_cache/
 
-# PyCharm
-.idea
+# VS Code
+.vscode
 
 # Logging
 discord.log
